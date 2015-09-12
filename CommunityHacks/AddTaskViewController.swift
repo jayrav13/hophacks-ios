@@ -8,19 +8,32 @@
 
 import UIKit
 
+protocol AddTaskViewControllerDelegate {
+    func addTask(controller: AddTaskViewController, item: [String])
+}
+
 class AddTaskViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EditTaskElementViewControllerDelegate {
 
     var tableView : UITableView!
     var inputs : [String]!
     var headers = ["Title", "Description", "Type", "Paid?", "Estimated Time", "Completion By", "Preferred Contact Info"]
+    var addBarButton : UIBarButtonItem!
+    
+    var delegate : AddTaskViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Add Hack"
         
         tableView = UITableView(frame: view.frame)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        addBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addRequestToMaster:")
+        self.navigationItem.rightBarButtonItem = addBarButton
+        
         view.addSubview(tableView)
         
         inputs = [String](count: 7, repeatedValue: "")
@@ -69,16 +82,15 @@ class AddTaskViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 8
+        return 7
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         if section < 7 {
             return headers[section]
-        }
-        else {
-            return "Add it!"
+        } else {
+            return ""
         }
         
     }
@@ -90,6 +102,14 @@ class AddTaskViewController: UIViewController, UITableViewDelegate, UITableViewD
     func controller(controller: EditTaskElementViewController, addedElement: String, indexValue: Int) {
         inputs[indexValue] = addedElement
         tableView.reloadData()
+    }
+    
+    func addRequestToMaster(sender: UIButton!) {
+        println("Made it!")
+        if let delegate = self.delegate {
+            delegate.addTask(self, item: inputs)
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     
 }

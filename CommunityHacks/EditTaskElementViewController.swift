@@ -31,6 +31,11 @@ class EditTaskElementViewController: UIViewController {
         
         textField = UITextField(frame: CGRect(x: 50, y: 100, width: screenWidth-100, height: 100))
         textField.borderStyle = UITextBorderStyle.RoundedRect
+        
+        if let data = currentData {
+            textField.text = data
+        }
+        
         view.addSubview(textField)
         
         button = UIButton.buttonWithType(UIButtonType.System) as! UIButton
@@ -45,9 +50,7 @@ class EditTaskElementViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func addElement(sender: UIButton!) {
-        println("Submit button on EditTask ViewController pressed!")
-        
+    func addElement(sender: UIButton!) {        
         if let delegate = self.delegate {
             delegate.controller(self, addedElement: textField.text, indexValue: item)
             self.navigationController?.popViewControllerAnimated(true)
