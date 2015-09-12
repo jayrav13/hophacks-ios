@@ -10,9 +10,10 @@
 		87750E5620F4D80725B46FDC /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3CBF424184493F671A5382 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E50805A11BA3EC5E00B52A2C /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50805A01BA3EC5E00B52A2C /* TasksViewController.swift */; };
 		E50805A31BA3EEEC00B52A2C /* StandardValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50805A21BA3EEEC00B52A2C /* StandardValues.swift */; };
-		E50805A51BA3FA9E00B52A2C /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50805A41BA3FA9E00B52A2C /* AddTaskViewController.swift */; };
 		E5F734771BA43BBB0073B69D /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F734761BA43BBB0073B69D /* HomeTabBarController.swift */; };
 		E5F7347A1BA4491D0073B69D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F734791BA4491D0073B69D /* ProfileViewController.swift */; };
+		E5F734821BA46AD70073B69D /* EditTaskElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F734811BA46AD70073B69D /* EditTaskElementViewController.swift */; };
+		E5F734841BA46C5E0073B69D /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F734831BA46C5E0073B69D /* AddTaskViewController.swift */; };
 		E5FD411B1BA3EAE300680272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD411A1BA3EAE300680272 /* AppDelegate.swift */; };
 		E5FD411E1BA3EAE300680272 /* CommunityHacks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5FD411C1BA3EAE300680272 /* CommunityHacks.xcdatamodeld */; };
 		E5FD41201BA3EAE300680272 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD411F1BA3EAE300680272 /* ViewController.swift */; };
@@ -38,9 +39,10 @@
 		DC3CBF424184493F671A5382 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50805A01BA3EC5E00B52A2C /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		E50805A21BA3EEEC00B52A2C /* StandardValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardValues.swift; sourceTree = "<group>"; };
-		E50805A41BA3FA9E00B52A2C /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		E5F734761BA43BBB0073B69D /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		E5F734791BA4491D0073B69D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E5F734811BA46AD70073B69D /* EditTaskElementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTaskElementViewController.swift; sourceTree = "<group>"; };
+		E5F734831BA46C5E0073B69D /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		E5FD41151BA3EAE300680272 /* CommunityHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5FD41191BA3EAE300680272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5FD411A1BA3EAE300680272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,11 +97,19 @@
 			children = (
 				E5FD411F1BA3EAE300680272 /* ViewController.swift */,
 				E5F734761BA43BBB0073B69D /* HomeTabBarController.swift */,
+				E5F734831BA46C5E0073B69D /* AddTaskViewController.swift */,
 				E50805A01BA3EC5E00B52A2C /* TasksViewController.swift */,
-				E50805A41BA3FA9E00B52A2C /* AddTaskViewController.swift */,
 				E5F734791BA4491D0073B69D /* ProfileViewController.swift */,
+				E5F734811BA46AD70073B69D /* EditTaskElementViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E5F7347C1BA4686E0073B69D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		E5FD410C1BA3EAE300680272 = {
@@ -125,6 +135,7 @@
 		E5FD41171BA3EAE300680272 /* CommunityHacks */ = {
 			isa = PBXGroup;
 			children = (
+				E5F7347C1BA4686E0073B69D /* Views */,
 				E5F734781BA447FE0073B69D /* ViewControllers */,
 				E5FD411A1BA3EAE300680272 /* AppDelegate.swift */,
 				E50805A21BA3EEEC00B52A2C /* StandardValues.swift */,
@@ -314,12 +325,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E50805A31BA3EEEC00B52A2C /* StandardValues.swift in Sources */,
-				E50805A51BA3FA9E00B52A2C /* AddTaskViewController.swift in Sources */,
 				E5FD41201BA3EAE300680272 /* ViewController.swift in Sources */,
 				E50805A11BA3EC5E00B52A2C /* TasksViewController.swift in Sources */,
 				E5FD411E1BA3EAE300680272 /* CommunityHacks.xcdatamodeld in Sources */,
+				E5F734821BA46AD70073B69D /* EditTaskElementViewController.swift in Sources */,
 				E5F734771BA43BBB0073B69D /* HomeTabBarController.swift in Sources */,
 				E5F7347A1BA4491D0073B69D /* ProfileViewController.swift in Sources */,
+				E5F734841BA46C5E0073B69D /* AddTaskViewController.swift in Sources */,
 				E5FD411B1BA3EAE300680272 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

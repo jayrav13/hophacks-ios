@@ -8,10 +8,11 @@
 
 import UIKit
 
-class AddTaskViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AddTaskViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EditTaskElementViewControllerDelegate {
 
     var tableView : UITableView!
     var inputs : [String]!
+    var headers = ["Title", "Description", "Type", "Paid?", "Estimated Time", "Completion By", "Preferred Contact Info"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,17 +38,30 @@ class AddTaskViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "cell")
-        if indexPath.row < 7 {
-            cell.textLabel?.text = inputs[indexPath.row]
+        if indexPath.section < 7 {
+            cell.textLabel?.text = inputs[indexPath.section]
         }
         else {
-            cell.textLabel?.text = ""
+            cell.textLabel?.text = "Submit"
+            cell.textLabel?.textAlignment = NSTextAlignment.Center
+            
         }
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.row < 7 {
+            var etevc : EditTaskElementViewController = EditTaskElementViewController()
+            
+            etevc.item = indexPath.section
+            etevc.selectedElement = headers[indexPath.section]
+            etevc.currentData = inputs[indexPath.section]
+            etevc.delegate = self
+            
+            
+            self.navigationController?.pushViewController(etevc, animated: true)
+        }
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,27 +74,22 @@ class AddTaskViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        switch section {
-        case 0:
-            return "Title"
-        case 1:
-            return "Description"
-        case 2:
-            return "Type"
-        case 3:
-            return "Paid?"
-        case 4:
-            return "Estimated Time"
-        case 5:
-            return "Completion By"
-        case 6:
-            return "Preferred Contact Info"
-        default:
-            return ""
+        if section < 7 {
+            return headers[section]
+        }
+        else {
+            return "Add it!"
         }
         
     }
-
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return indexPath.row < 7
+    }
+    
+    func controller(controller: EditTaskElementViewController, addedElement: String, indexValue: Int) {
+        inputs[indexValue] = addedElement
+        tableView.reloadData()
+    }
     
 }
