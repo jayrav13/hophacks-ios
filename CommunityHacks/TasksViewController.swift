@@ -16,6 +16,7 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         view.backgroundColor = UIColor.whiteColor()
         self.title = "List of Hacks"
         
@@ -26,7 +27,7 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
         
-        var addTaskBarButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: nil, action: nil)
+        var addTaskBarButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addItem:")
         self.navigationItem.rightBarButtonItem = addTaskBarButton
         
         toolbar = UIToolbar()
@@ -37,8 +38,6 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.toolbar.items = bottomBarButtons
         
         view.addSubview(toolbar)
-        
-        println("Logged in!")
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,6 +65,12 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             
         })
+    }
+    
+    func addItem(sender: UIButton!) {
+        println("Made it to addItem method")
+        
+        self.navigationController?.pushViewController(AddTaskViewController(), animated: true)
     }
     
 }

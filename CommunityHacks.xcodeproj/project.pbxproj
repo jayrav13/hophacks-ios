@@ -11,6 +11,8 @@
 		E50805A11BA3EC5E00B52A2C /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50805A01BA3EC5E00B52A2C /* TasksViewController.swift */; };
 		E50805A31BA3EEEC00B52A2C /* StandardValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50805A21BA3EEEC00B52A2C /* StandardValues.swift */; };
 		E50805A51BA3FA9E00B52A2C /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50805A41BA3FA9E00B52A2C /* AddTaskViewController.swift */; };
+		E5F734771BA43BBB0073B69D /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F734761BA43BBB0073B69D /* HomeTabBarController.swift */; };
+		E5F7347A1BA4491D0073B69D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F734791BA4491D0073B69D /* ProfileViewController.swift */; };
 		E5FD411B1BA3EAE300680272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD411A1BA3EAE300680272 /* AppDelegate.swift */; };
 		E5FD411E1BA3EAE300680272 /* CommunityHacks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E5FD411C1BA3EAE300680272 /* CommunityHacks.xcdatamodeld */; };
 		E5FD41201BA3EAE300680272 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD411F1BA3EAE300680272 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		E50805A01BA3EC5E00B52A2C /* TasksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		E50805A21BA3EEEC00B52A2C /* StandardValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardValues.swift; sourceTree = "<group>"; };
 		E50805A41BA3FA9E00B52A2C /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		E5F734761BA43BBB0073B69D /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		E5F734791BA4491D0073B69D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E5FD41151BA3EAE300680272 /* CommunityHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5FD41191BA3EAE300680272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5FD411A1BA3EAE300680272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +90,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E5F734781BA447FE0073B69D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E5FD411F1BA3EAE300680272 /* ViewController.swift */,
+				E5F734761BA43BBB0073B69D /* HomeTabBarController.swift */,
+				E50805A01BA3EC5E00B52A2C /* TasksViewController.swift */,
+				E50805A41BA3FA9E00B52A2C /* AddTaskViewController.swift */,
+				E5F734791BA4491D0073B69D /* ProfileViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		E5FD410C1BA3EAE300680272 = {
 			isa = PBXGroup;
 			children = (
@@ -109,11 +125,9 @@
 		E5FD41171BA3EAE300680272 /* CommunityHacks */ = {
 			isa = PBXGroup;
 			children = (
+				E5F734781BA447FE0073B69D /* ViewControllers */,
 				E5FD411A1BA3EAE300680272 /* AppDelegate.swift */,
-				E5FD411F1BA3EAE300680272 /* ViewController.swift */,
 				E50805A21BA3EEEC00B52A2C /* StandardValues.swift */,
-				E50805A01BA3EC5E00B52A2C /* TasksViewController.swift */,
-				E50805A41BA3FA9E00B52A2C /* AddTaskViewController.swift */,
 				E5FD41211BA3EAE300680272 /* Main.storyboard */,
 				E5FD41241BA3EAE300680272 /* Images.xcassets */,
 				E5FD41261BA3EAE300680272 /* LaunchScreen.xib */,
@@ -304,6 +318,8 @@
 				E5FD41201BA3EAE300680272 /* ViewController.swift in Sources */,
 				E50805A11BA3EC5E00B52A2C /* TasksViewController.swift in Sources */,
 				E5FD411E1BA3EAE300680272 /* CommunityHacks.xcdatamodeld in Sources */,
+				E5F734771BA43BBB0073B69D /* HomeTabBarController.swift in Sources */,
+				E5F7347A1BA4491D0073B69D /* ProfileViewController.swift in Sources */,
 				E5FD411B1BA3EAE300680272 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
