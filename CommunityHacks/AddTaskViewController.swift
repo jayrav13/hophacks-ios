@@ -10,6 +10,18 @@ import UIKit
 
 class AddTaskViewController: UIViewController {
 
+    var addLabel : UILabel!
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
 }
